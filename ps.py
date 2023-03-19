@@ -38,7 +38,7 @@ if input1 and output is not None:
         return dff.to_csv().encode('utf-8')
     csv = convert_df(test)
     st.download_button(
-        label="Download file",data=Path("output.csv").read_text()
+        label="Download file",data=Path("output.csv").read_text(),
         data=csv,
         file_name='output.csv',
         mime='text/csv',)
