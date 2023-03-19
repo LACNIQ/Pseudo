@@ -10,6 +10,7 @@ import numpy as np
 import streamlit as st
 import warnings
 import openpyxl
+from pathlib import Path
 warnings.filterwarnings('ignore')
 
 
@@ -37,7 +38,7 @@ if input1 and output is not None:
         return dff.to_csv().encode('utf-8')
     csv = convert_df(test)
     st.download_button(
-        label="Download file",
+        label="Download file",data=Path("output.csv").read_text()
         data=csv,
         file_name='output.csv',
         mime='text/csv',)
